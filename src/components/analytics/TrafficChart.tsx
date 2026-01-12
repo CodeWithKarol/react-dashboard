@@ -31,11 +31,11 @@ export function TrafficChart() {
             className="w-full flex flex-col items-center group relative h-full justify-end"
           >
             {/* Stacked Bar Container */}
-            <div className="w-full max-w-[32px] sm:max-w-[48px] h-full flex flex-col justify-end gap-[1px]">
+            <div className="w-full max-w-[32px] sm:max-w-[48px] flex-1 flex flex-col justify-end gap-1 pb-2">
               {/* Social (Top) */}
               <div
                 style={{ height: `${(d.social / maxVal) * 100}%` }}
-                className="w-full bg-slate-200 dark:bg-slate-600 rounded-t-sm transition-all duration-500 relative group/bar"
+                className="w-full bg-slate-200 dark:bg-slate-600 rounded-md transition-all duration-500 relative group/bar"
               >
                 {/* Tooltip */}
                 <div className="opacity-0 group-hover/bar:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 bg-slate-900 text-white text-xs rounded z-10 pointer-events-none whitespace-nowrap transition-opacity">
@@ -46,7 +46,7 @@ export function TrafficChart() {
               {/* Referral (Middle) */}
               <div
                 style={{ height: `${(d.referral / maxVal) * 100}%` }}
-                className="w-full bg-indigo-300 dark:bg-indigo-400 rounded-sm transition-all duration-500 relative group/bar"
+                className="w-full bg-indigo-300 dark:bg-indigo-400 rounded-md transition-all duration-500 relative group/bar"
               >
                 <div className="opacity-0 group-hover/bar:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 bg-slate-900 text-white text-xs rounded z-10 pointer-events-none whitespace-nowrap transition-opacity">
                   Referral: {d.referral}
@@ -56,7 +56,7 @@ export function TrafficChart() {
               {/* Organic (Bottom) */}
               <div
                 style={{ height: `${(d.organic / maxVal) * 100}%` }}
-                className="w-full bg-indigo-600 rounded-b-sm group-hover:bg-indigo-500 transition-all duration-500 relative group/bar"
+                className="w-full bg-indigo-600 rounded-md group-hover:bg-indigo-500 transition-all duration-500 relative group/bar"
               >
                 <div className="opacity-0 group-hover/bar:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 bg-slate-900 text-white text-xs rounded z-10 pointer-events-none whitespace-nowrap transition-opacity">
                   Organic: {d.organic}
@@ -64,7 +64,7 @@ export function TrafficChart() {
               </div>
             </div>
 
-            <span className="text-xs text-slate-500 mt-3 font-medium">
+            <span className="text-xs text-slate-500 font-medium h-4">
               {d.label}
             </span>
           </div>
