@@ -1,21 +1,12 @@
-import { useState } from "react";
+import { useTheme } from "../../hooks/useTheme";
 
 type HeaderProps = {
   onToggleSidebar: () => void;
 };
 
 export function Header({ onToggleSidebar }: HeaderProps) {
-  const [isDark, setIsDark] = useState(false);
-
-  const toggleTheme = () => {
-    const newIsDark = !isDark;
-    setIsDark(newIsDark);
-    if (newIsDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <header className="sticky top-0 z-20 flex h-16 flex-shrink-0 items-center gap-x-4 border-b border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
