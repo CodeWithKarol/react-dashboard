@@ -1,3 +1,5 @@
+import { Card } from "../ui/Card";
+
 export function AnalyticsStats() {
   const stats = [
     {
@@ -87,14 +89,14 @@ export function AnalyticsStats() {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
       {stats.map((item) => (
-        <div
+        <Card
           key={item.name}
-          className="relative overflow-hidden rounded-xl bg-white dark:bg-slate-800 p-6 shadow-md ring-1 ring-slate-900/5 transition-all hover:shadow-lg"
+          className="relative overflow-hidden hover:shadow-md transition-all"
         >
           <div className="flex items-center">
-            <div className="rounded-md bg-indigo-500 p-3 shadow-lg shadow-indigo-500/30">
+            <div className="rounded-lg bg-indigo-500 p-3 shadow-md shadow-indigo-500/20">
               {item.icon}
             </div>
             <div className="ml-5 w-0 flex-1">
@@ -103,15 +105,15 @@ export function AnalyticsStats() {
                   {item.name}
                 </dt>
                 <dd>
-                  <div className="flex items-baseline text-2xl font-bold text-slate-900 dark:text-white">
+                  <div className="flex items-baseline text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                     {item.value}
                     <span
                       className={`ml-2 flex items-baseline text-sm font-semibold ${
                         item.changeType === "increase" ||
                         (item.name === "Bounce Rate" &&
                           item.changeType === "decrease")
-                          ? "text-green-600"
-                          : "text-red-600"
+                          ? "text-emerald-600"
+                          : "text-rose-600"
                       }`}
                     >
                       {item.changeType !== "neutral" ? (
@@ -119,8 +121,8 @@ export function AnalyticsStats() {
                           className={`self-center flex-shrink-0 h-4 w-4 ${
                             item.changeType === "decrease" &&
                             item.name !== "Bounce Rate"
-                              ? "rotate-180 text-red-500"
-                              : "text-green-500"
+                              ? "rotate-180 text-rose-500"
+                              : "text-emerald-500"
                           }`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
@@ -131,7 +133,7 @@ export function AnalyticsStats() {
                             d={
                               item.changeType === "increase" ||
                               (item.name === "Bounce Rate" &&
-                                item.changeType === "decrease") // heuristic for arrow logic
+                                item.changeType === "decrease")
                                 ? "M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
                                 : "M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
                             }
@@ -146,7 +148,7 @@ export function AnalyticsStats() {
               </dl>
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );

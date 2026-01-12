@@ -1,7 +1,12 @@
+import { Card } from "../ui/Card";
+
 export function TopCountries() {
   return (
-    <section className="flex flex-col bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/60 dark:border-slate-700/60 overflow-hidden transition-shadow hover:shadow-md h-[435px]">
-      <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-700/50 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50 backdrop-blur-sm">
+    <Card
+      noPadding
+      className="h-[400px] flex flex-col shadow-md overflow-hidden"
+    >
+      <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-700/50 flex items-center justify-between">
         <h3 className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <svg
             className="w-5 h-5 text-indigo-500"
@@ -25,9 +30,12 @@ export function TopCountries() {
 
       <div className="flex-1 overflow-auto custom-scrollbar p-0">
         <table className="min-w-full text-left text-sm whitespace-nowrap">
-          <thead className="bg-slate-50 dark:bg-slate-700/20 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold sticky top-0 z-10 backdrop-blur-md">
+          <thead className="bg-slate-50 dark:bg-slate-800 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold sticky top-0 z-10">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th
+                scope="col"
+                className="px-6 py-3 border-b border-slate-200 dark:border-slate-700"
+              >
                 Country
               </th>
               <th scope="col" className="px-6 py-3 text-right">
@@ -102,6 +110,6 @@ export function TopCountries() {
           Showing top 8 countries by active users
         </p>
       </div>
-    </section>
+    </Card>
   );
 }

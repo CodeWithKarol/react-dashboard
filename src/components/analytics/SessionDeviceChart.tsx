@@ -1,3 +1,5 @@
+import { Card } from "../ui/Card";
+
 export function SessionDeviceChart() {
   const data = [
     { name: "Desktop", value: 65, color: "text-indigo-500" },
@@ -15,7 +17,7 @@ export function SessionDeviceChart() {
   let currentOffset = 0;
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/60 dark:border-slate-700/60 p-6 flex flex-col">
+    <Card className="flex flex-col shadow-md">
       <h3 className="text-base font-semibold text-slate-900 dark:text-white mb-6">
         Device Breakdown
       </h3>
@@ -98,6 +100,6 @@ export function SessionDeviceChart() {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

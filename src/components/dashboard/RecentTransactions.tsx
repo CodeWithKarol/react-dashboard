@@ -5,20 +5,18 @@ export function RecentTransactions() {
   return (
     <Card
       noPadding
-      className="xl:col-span-2 shadow-md ring-1 ring-slate-900/5 overflow-hidden"
+      className="shadow-md ring-1 ring-slate-900/5 overflow-hidden"
     >
       <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5 flex items-center justify-between">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Recent Transactions
         </h3>
-        <div className="flex gap-2">
-          <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-            Active
-          </span>
-          <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
-            Pending
-          </span>
-        </div>
+        <a
+          href="#"
+          className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+        >
+          View all
+        </a>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">

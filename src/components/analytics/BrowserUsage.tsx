@@ -1,3 +1,5 @@
+import { Card } from "../ui/Card";
+
 export function BrowserUsage() {
   const browsers = [
     { name: "Chrome", usage: 62.4, color: "bg-blue-500" },
@@ -8,7 +10,7 @@ export function BrowserUsage() {
   ];
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200/60 dark:border-slate-700/60 p-6">
+    <Card className="shadow-md">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-base font-semibold text-slate-900 dark:text-white">
           Browser Usage
@@ -73,6 +75,6 @@ export function BrowserUsage() {
           </span>
         </p>
       </div>
-    </div>
+    </Card>
   );
 }

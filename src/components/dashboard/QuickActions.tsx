@@ -1,3 +1,5 @@
+import { Card } from "../ui/Card";
+
 export function QuickActions() {
   const actions = [
     {
@@ -79,7 +81,7 @@ export function QuickActions() {
   ];
 
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-900/5 p-6">
+    <Card className="shadow-md">
       <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-4">
         Quick Actions
       </h3>
@@ -88,7 +90,7 @@ export function QuickActions() {
           <button
             key={action.name}
             type="button"
-            className="flex flex-col items-center justify-center p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md transition-all group bg-slate-50 dark:bg-slate-900/50"
+            className="flex flex-col items-center justify-center p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md transition-all group bg-white dark:bg-slate-800"
           >
             <div
               className={`p-3 rounded-full ${action.color} text-white mb-3 group-hover:scale-110 transition-transform shadow-sm`}
@@ -101,6 +103,6 @@ export function QuickActions() {
           </button>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

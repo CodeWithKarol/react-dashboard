@@ -7,7 +7,7 @@ export function WelcomeBanner() {
   });
 
   return (
-    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-8 text-white shadow-lg mb-8">
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-8 text-white shadow-md mb-8 ring-1 ring-black/5">
       <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">

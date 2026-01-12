@@ -1,3 +1,5 @@
+import { Card } from "../ui/Card";
+
 export function TrafficChart() {
   const data = [
     { label: "Mon", organic: 35, referral: 25, social: 15 },
@@ -13,12 +15,12 @@ export function TrafficChart() {
     Math.max(...data.map((d) => d.organic + d.referral + d.social)) * 1.1; // 10% headroom
 
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-md ring-1 ring-slate-900/5 p-6 h-[400px] flex flex-col transition-all hover:shadow-lg">
+    <Card className="h-[400px] flex flex-col shadow-md">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Traffic Sources
         </h3>
-        <select className="bg-transparent text-sm font-medium text-slate-500 dark:text-slate-400 border-none focus:ring-0 cursor-pointer outline-none">
+        <select className="bg-transparent text-sm font-medium text-slate-500 dark:text-slate-400 border-none focus:ring-0 cursor-pointer outline-none hover:text-indigo-600 transition-colors">
           <option>Last 7 Days</option>
           <option>Last 30 Days</option>
         </select>
@@ -84,6 +86,6 @@ export function TrafficChart() {
           Social
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
