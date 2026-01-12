@@ -1,34 +1,5 @@
 import React from "react";
 
-interface StatsCardProps {
-  title: string;
-  value: string;
-  trend: string;
-  trendType: "positive" | "negative";
-  iconName: "users" | "cursor" | "chart" | "currency";
-  color: "indigo" | "blue" | "purple" | "pink";
-}
-
-const ICONS = {
-  users: (
-    <path
-      fillRule="evenodd"
-      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A9.916 9.916 0 0010 18c1.692 0 3.237-.535 4.493-1.41A5.99 5.99 0 0010 12z"
-      clipRule="evenodd"
-    />
-  ),
-  cursor: (
-    <path
-      fillRule="evenodd"
-      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z" // Placeholder path, replacing generic cursor
-      clipRule="evenodd"
-    />
-  ),
-  // Actual paths from Dashboard.tsx
-  // ... I'll try to reuse what was there or use generic ones correctly.
-  // The user wants strict React 19 best practices.
-};
-
 // Let's refine the component to take `React.ReactNode` for icon or specific paths if we want to be pure.
 // For now, I'll stick to passing children or specific props.
 

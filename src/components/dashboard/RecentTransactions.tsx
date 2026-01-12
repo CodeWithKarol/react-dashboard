@@ -1,56 +1,12 @@
-interface Transaction {
-  id: string;
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-  amount: string;
-  status: "Paid" | "Pending" | "Failed";
-  date: string;
-}
-
-const TRANSACTIONS: Transaction[] = [
-  {
-    id: "1",
-    user: {
-      name: "Lindsay Walton",
-      email: "lindsay.walton@example.com",
-      avatar:
-        "https://ui-avatars.com/api/?name=Lindsay+Walton&background=random",
-    },
-    amount: "$2,450.00",
-    status: "Paid",
-    date: "Jan 12, 2026",
-  },
-  {
-    id: "2",
-    user: {
-      name: "Courtney Henry",
-      email: "courtney.henry@example.com",
-      avatar:
-        "https://ui-avatars.com/api/?name=Courtney+Henry&background=random",
-    },
-    amount: "$1,950.00",
-    status: "Pending",
-    date: "Jan 11, 2026",
-  },
-  {
-    id: "3",
-    user: {
-      name: "Tom Cook",
-      email: "tom.cook@example.com",
-      avatar: "https://ui-avatars.com/api/?name=Tom+Cook&background=random",
-    },
-    amount: "$850.00",
-    status: "Paid",
-    date: "Jan 10, 2026",
-  },
-];
+import { TRANSACTIONS } from "../../data/mockData";
+import { Card } from "../ui/Card";
 
 export function RecentTransactions() {
   return (
-    <div className="xl:col-span-2 rounded-xl bg-white dark:bg-slate-800 shadow-md ring-1 ring-slate-900/5 overflow-hidden">
+    <Card
+      noPadding
+      className="xl:col-span-2 shadow-md ring-1 ring-slate-900/5 overflow-hidden"
+    >
       <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5 flex items-center justify-between">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Recent Transactions
@@ -154,6 +110,6 @@ export function RecentTransactions() {
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -33,7 +33,7 @@ export function SessionDeviceChart() {
             className="text-slate-100 dark:text-slate-700/30"
           />
 
-          {data.map((item, i) => {
+          {data.map((item) => {
             const dashArray = (item.value / 100) * c;
             const offset = currentOffset;
             currentOffset -= dashArray; // Subtract because we want to go clockwise or maintain order

@@ -1,44 +1,9 @@
-export function TeamMembers() {
-  const members = [
-    {
-      name: "Lindsay Walton",
-      role: "Front-end Developer",
-      imageUrl:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      isOnline: true,
-    },
-    {
-      name: "Courtney Henry",
-      role: "Designer",
-      imageUrl:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      isOnline: true,
-    },
-    {
-      name: "Tom Cook",
-      role: "Director of Product",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      isOnline: false,
-    },
-    {
-      name: "Whitney Francis",
-      role: "Copywriter",
-      imageUrl:
-        "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      isOnline: true,
-    },
-    {
-      name: "Leonard Krasner",
-      role: "Senior Designer",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      isOnline: false,
-    },
-  ];
+import { TEAM_MEMBERS } from "../../data/mockData";
+import { Card } from "../ui/Card";
 
+export function TeamMembers() {
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-900/5">
+    <Card noPadding className="shadow-sm ring-1 ring-slate-900/5">
       <div className="p-6">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-4">
           Team Members
@@ -47,7 +12,7 @@ export function TeamMembers() {
           role="list"
           className="-my-5 divide-y divide-slate-100 dark:divide-slate-700"
         >
-          {members.map((person) => (
+          {TEAM_MEMBERS.map((person) => (
             <li key={person.name} className="flex py-4 gap-x-4">
               <img
                 className="h-10 w-10 flex-none rounded-full bg-slate-50"
@@ -94,6 +59,6 @@ export function TeamMembers() {
           </button>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

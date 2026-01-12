@@ -1,6 +1,8 @@
+import { Card } from "../ui/Card";
+
 export function UserAcquisitionChart() {
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-md ring-1 ring-slate-900/5 p-6">
+    <Card className="shadow-md">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           User Acquisition
@@ -149,6 +151,6 @@ export function UserAcquisitionChart() {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

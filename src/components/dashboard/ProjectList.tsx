@@ -1,49 +1,9 @@
-const projects = [
-  {
-    name: "Website Redesign",
-    tech: "React, Tailwind",
-    progress: 75,
-    dueDate: "2023-11-15",
-    members: [
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    ],
-  },
-  {
-    name: "Mobile App Integration",
-    tech: "Flutter, Firebase",
-    progress: 45,
-    dueDate: "2023-12-01",
-    members: [
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    ],
-  },
-  {
-    name: "Marketing Campaign",
-    tech: "SEO, Content",
-    progress: 90,
-    dueDate: "2023-10-30",
-    members: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    ],
-  },
-  {
-    name: "Database Migration",
-    tech: "PostgreSQL, AWS",
-    progress: 15,
-    dueDate: "2024-01-20",
-    members: [
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    ],
-  },
-];
+import { PROJECTS } from "../../data/mockData";
+import { Card } from "../ui/Card";
 
 export function ProjectList() {
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-900/5">
+    <Card noPadding className="shadow-sm ring-1 ring-slate-900/5">
       <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Active Projects
@@ -83,7 +43,7 @@ export function ProjectList() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
-            {projects.map((project) => (
+            {PROJECTS.map((project) => (
               <tr key={project.name}>
                 <td className="whitespace-nowrap px-6 py-4">
                   <div className="flex flex-col">
@@ -142,6 +102,6 @@ export function ProjectList() {
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 }

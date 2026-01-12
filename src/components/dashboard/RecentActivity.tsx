@@ -1,4 +1,4 @@
-import React from "react";
+import { Card } from "../ui/Card";
 
 interface ActivityItem {
   id: number;
@@ -95,7 +95,7 @@ const ACTIVITIES: ActivityItem[] = [
 
 export function RecentActivity() {
   return (
-    <div className="rounded-xl bg-white dark:bg-slate-800 shadow-md ring-1 ring-slate-900/5 p-6">
+    <Card className="shadow-md">
       <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-6">
         Recent Activity
       </h3>
@@ -134,6 +134,6 @@ export function RecentActivity() {
           ))}
         </ul>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -5,6 +5,13 @@
   --font-sans: "Inter", sans-serif;
 }
 
+/* Ensure full height for layout to work correctly */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent double scrollbars */
+}
+
 @layer base {
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
