@@ -1,4 +1,22 @@
+import { useState } from "react";
+import { Modal } from "../ui/Modal";
+
 export function QuickActions() {
+  const [activeAction, setActiveAction] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleAction = (actionName: string) => {
+    setActiveAction(actionName);
+  };
+
+  const handleConfirm = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setActiveAction(null);
+    }, 1500);
+  };
+
   const actions = [
     {
       name: "New User",
@@ -79,30 +97,73 @@ export function QuickActions() {
   ];
 
   return (
-    <div className="rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10">
-      <div className="p-6">
-        <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
-          Quick Actions
-        </h3>
-        <div className="mt-4 grid grid-cols-2 gap-4">
-          {actions.map((action) => (
-            <button
-              key={action.name}
-              type="button"
-              className="group flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-4 hover:bg-white hover:border-indigo-500 hover:ring-1 hover:ring-indigo-500 hover:shadow-sm transition-all dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-500"
-            >
-              <div
-                className={`mb-3 flex h-10 w-10 items-center justify-center rounded-lg ${action.color} text-white shadow-sm ring-1 ring-white/20 group-hover:scale-110 transition-transform`}
+    <>
+      <div className="rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10">
+        <div className="p-6">
+          <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
+            Quick Actions
+          </h3>
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            {actions.map((action) => (
+              <button
+                key={action.name}
+                type="button"
+                onClick={() => handleAction(action.name)}
+                className="group flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-4 hover:bg-white hover:border-indigo-500 hover:ring-1 hover:ring-indigo-500 hover:shadow-sm transition-all dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-500"
               >
-                {action.icon}
-              </div>
-              <span className="text-xs font-semibold uppercase tracking-wide text-slate-600 group-hover:text-slate-900 dark:text-slate-400 dark:group-hover:text-white">
-                {action.name}
-              </span>
-            </button>
-          ))}
+                <div
+                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-lg ${action.color} text-white shadow-sm ring-1 ring-white/20 group-hover:scale-110 transition-transform`}
+                >
+                  {action.icon}
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-600 group-hover:text-slate-900 dark:text-slate-400 dark:group-hover:text-white">
+                  {action.name}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      <Modal
+        isOpen={!!activeAction}
+        onClose={() => setActiveAction(null)}
+        title={activeAction || ""}
+        footer={
+          <>
+            <button
+              type="button"
+              disabled={isLoading}
+              className={`inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto ${
+                isLoading
+                  ? "bg-indigo-400 cursor-not-allowed"
+                  : "bg-indigo-600 hover:bg-indigo-500"
+              }`}
+              onClick={handleConfirm}
+            >
+              {isLoading ? "Processing..." : "Confirm"}
+            </button>
+            <button
+              type="button"
+              className="mt-3 inline-flex w-full justify-center rounded-md bg-white dark:bg-slate-700 px-3 py-2 text-sm font-semibold text-slate-900 dark:text-slate-200 shadow-sm ring-1 ring-inset ring-slate-300 dark:ring-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 sm:mt-0 sm:w-auto"
+              onClick={() => setActiveAction(null)}
+            >
+              Cancel
+            </button>
+          </>
+        }
+      >
+        <div className="py-4 text-slate-600 dark:text-slate-300">
+          <p>
+            This is a mock action for{" "}
+            <strong className="text-slate-900 dark:text-white">
+              {activeAction}
+            </strong>
+            . In a real application, this would open a specific form or trigger
+            a backend process.
+          </p>
+        </div>
+      </Modal>
+    </>
   );
 }

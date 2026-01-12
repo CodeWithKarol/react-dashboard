@@ -1,6 +1,10 @@
 import { Card } from "../ui/Card";
 
-export function RevenueChart() {
+interface RevenueChartProps {
+  onViewReport?: () => void;
+}
+
+export function RevenueChart({ onViewReport }: RevenueChartProps) {
   return (
     <Card>
       <div className="flex items-center justify-between mb-6">
@@ -12,7 +16,11 @@ export function RevenueChart() {
             Monthly revenue performance
           </p>
         </div>
-        <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+        <button
+          type="button"
+          onClick={onViewReport}
+          className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+        >
           View Report
         </button>
       </div>
