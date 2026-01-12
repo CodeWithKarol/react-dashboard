@@ -3,46 +3,43 @@ import { Card } from "../ui/Card";
 
 export function RecentTransactions() {
   return (
-    <Card
-      noPadding
-      className="shadow-md ring-1 ring-slate-900/5 overflow-hidden"
-    >
-      <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5 flex items-center justify-between">
+    <Card noPadding className="overflow-hidden">
+      <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Recent Transactions
         </h3>
         <a
           href="#"
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+          className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
         >
           View all
         </a>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
-          <thead className="bg-slate-50 dark:bg-slate-800/50">
+          <thead className="bg-slate-50 dark:bg-slate-800">
             <tr>
               <th
                 scope="col"
-                className="py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-slate-900 dark:text-slate-200"
+                className="py-3.5 pl-6 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400"
               >
                 User
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-slate-900 dark:text-slate-200"
+                className="px-3 py-3.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400"
               >
                 Amount
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-slate-900 dark:text-slate-200"
+                className="px-3 py-3.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400"
               >
                 Status
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-slate-900 dark:text-slate-200"
+                className="px-3 py-3.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400"
               >
                 Date
               </th>

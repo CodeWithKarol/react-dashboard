@@ -1,13 +1,12 @@
-import { Card } from "../ui/Card";
 import { DASHBOARD_STATS } from "../../data/mockData";
 
 export function StatsGrid() {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {DASHBOARD_STATS.map((stat) => (
-        <Card
+        <div
           key={stat.title}
-          className="px-6 py-4 hover:ring-2 hover:ring-indigo-500/10 transition-all duration-200"
+          className="overflow-hidden rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10 transition-all duration-200 hover:shadow-md"
         >
           <dt className="text-sm font-medium text-slate-500 dark:text-slate-400">
             {stat.title}
@@ -51,7 +50,7 @@ export function StatsGrid() {
               {stat.trend}
             </span>
           </dd>
-        </Card>
+        </div>
       ))}
     </div>
   );

@@ -1,5 +1,3 @@
-import { Card } from "../ui/Card";
-
 export function QuickActions() {
   const actions = [
     {
@@ -81,28 +79,30 @@ export function QuickActions() {
   ];
 
   return (
-    <Card className="shadow-md">
-      <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-4">
-        Quick Actions
-      </h3>
-      <div className="grid grid-cols-2 gap-4">
-        {actions.map((action) => (
-          <button
-            key={action.name}
-            type="button"
-            className="flex flex-col items-center justify-center p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md transition-all group bg-white dark:bg-slate-800"
-          >
-            <div
-              className={`p-3 rounded-full ${action.color} text-white mb-3 group-hover:scale-110 transition-transform shadow-sm`}
+    <div className="rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10">
+      <div className="p-6">
+        <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
+          Quick Actions
+        </h3>
+        <div className="mt-4 grid grid-cols-2 gap-4">
+          {actions.map((action) => (
+            <button
+              key={action.name}
+              type="button"
+              className="group flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-4 hover:bg-white hover:border-indigo-500 hover:ring-1 hover:ring-indigo-500 hover:shadow-sm transition-all dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-500"
             >
-              {action.icon}
-            </div>
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
-              {action.name}
-            </span>
-          </button>
-        ))}
+              <div
+                className={`mb-3 flex h-10 w-10 items-center justify-center rounded-lg ${action.color} text-white shadow-sm ring-1 ring-white/20 group-hover:scale-110 transition-transform`}
+              >
+                {action.icon}
+              </div>
+              <span className="text-xs font-semibold uppercase tracking-wide text-slate-600 group-hover:text-slate-900 dark:text-slate-400 dark:group-hover:text-white">
+                {action.name}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
-    </Card>
+    </div>
   );
 }

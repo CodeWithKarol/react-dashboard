@@ -3,36 +3,43 @@ import { Card } from "../ui/Card";
 
 export function TeamMembers() {
   return (
-    <Card noPadding className="shadow-sm ring-1 ring-slate-900/5">
-      <div className="p-6">
-        <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-4">
+    <Card noPadding className="overflow-hidden">
+      <div className="p-6 pb-0 mb-4">
+        <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Team Members
         </h3>
+      </div>
+      <div className="px-6 pb-6">
         <ul
           role="list"
-          className="-my-5 divide-y divide-slate-100 dark:divide-slate-700"
+          className="divide-y divide-slate-100 dark:divide-slate-700"
         >
           {TEAM_MEMBERS.map((person) => (
-            <li key={person.name} className="flex py-4 gap-x-4">
-              <img
-                className="h-10 w-10 flex-none rounded-full bg-slate-50"
-                src={person.imageUrl}
-                alt=""
-              />
-              <div className="flex-auto">
-                <p className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
-                  {person.name}
-                </p>
-                <p className="flex text-xs leading-5 text-slate-500 dark:text-slate-400">
-                  <a
-                    href={`mailto:${person.name
-                      .replace(" ", ".")
-                      .toLowerCase()}@example.com`}
-                    className="hover:underline hover:text-indigo-600 truncate"
-                  >
-                    {person.name.replace(" ", ".").toLowerCase()}@example.com
-                  </a>
-                </p>
+            <li
+              key={person.name}
+              className="flex items-center justify-between py-4 gap-x-4 first:pt-0 last:pb-0"
+            >
+              <div className="flex items-center gap-x-4">
+                <img
+                  className="h-10 w-10 flex-none rounded-full bg-slate-50 ring-1 ring-slate-200 dark:ring-slate-700"
+                  src={person.imageUrl}
+                  alt=""
+                />
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold leading-6 text-slate-900 dark:text-white">
+                    {person.name}
+                  </p>
+                  <p className="flex text-xs leading-5 text-slate-500 dark:text-slate-400">
+                    <a
+                      href={`mailto:${person.name
+                        .replace(" ", ".")
+                        .toLowerCase()}@example.com`}
+                      className="hover:text-indigo-600 dark:hover:text-indigo-400 truncate transition-colors"
+                    >
+                      {person.name.replace(" ", ".").toLowerCase()}@example.com
+                    </a>
+                  </p>
+                </div>
               </div>
               <div className="flex flex-col items-end">
                 {person.isOnline ? (
@@ -46,15 +53,15 @@ export function TeamMembers() {
                   </div>
                 ) : (
                   <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
-                    Last seen 3h ago
+                    3h ago
                   </p>
                 )}
               </div>
             </li>
           ))}
         </ul>
-        <div className="mt-6">
-          <button className="w-full flex justify-center items-center gap-2 rounded-md bg-white dark:bg-slate-800 px-3 py-2 text-sm font-semibold text-slate-900 dark:text-slate-200 shadow-sm ring-1 ring-inset ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
+        <div className="mt-6 border-t border-slate-100 dark:border-slate-700 pt-4">
+          <button className="w-full text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">
             View All Members
           </button>
         </div>

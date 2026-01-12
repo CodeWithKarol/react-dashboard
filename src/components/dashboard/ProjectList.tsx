@@ -1,16 +1,15 @@
 import { PROJECTS } from "../../data/mockData";
-import { Card } from "../ui/Card";
 
 export function ProjectList() {
   return (
-    <Card noPadding className="shadow-sm ring-1 ring-slate-900/5">
-      <div className="border-b border-slate-200 dark:border-slate-700 px-6 py-5">
+    <div className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10">
+      <div className="border-b border-slate-200 dark:border-slate-800 px-6 py-5">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           Active Projects
         </h3>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
           <thead>
             <tr>
               <th
@@ -42,7 +41,7 @@ export function ProjectList() {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
+          <tbody className="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900">
             {PROJECTS.map((project) => (
               <tr key={project.name}>
                 <td className="whitespace-nowrap px-6 py-4">
@@ -102,6 +101,6 @@ export function ProjectList() {
           </tbody>
         </table>
       </div>
-    </Card>
+    </div>
   );
 }

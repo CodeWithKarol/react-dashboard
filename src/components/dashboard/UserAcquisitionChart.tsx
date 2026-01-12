@@ -2,12 +2,12 @@ import { Card } from "../ui/Card";
 
 export function UserAcquisitionChart() {
   return (
-    <Card className="shadow-md">
-      <div className="flex items-center justify-between mb-4">
+    <Card>
+      <div className="flex items-center justify-between mb-6">
         <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
           User Acquisition
         </h3>
-        <select className="text-sm bg-transparent border-none text-slate-500 focus:ring-0 cursor-pointer">
+        <select className="text-sm bg-transparent font-medium border-none text-slate-500 hover:text-slate-900 focus:ring-0 cursor-pointer transition-colors">
           <option>Last 7 Days</option>
           <option>Last 30 Days</option>
         </select>

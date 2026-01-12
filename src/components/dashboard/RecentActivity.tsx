@@ -22,10 +22,10 @@ const ACTIVITIES: ActivityItem[] = [
       </>
     ),
     time: "1h",
-    iconBg: "bg-green-500",
+    iconBg: "bg-emerald-100",
     icon: (
       <svg
-        className="h-5 w-5 text-white"
+        className="h-4 w-4 text-emerald-600"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -44,16 +44,19 @@ const ACTIVITIES: ActivityItem[] = [
     content: (
       <>
         New user registered{" "}
-        <a href="#" className="font-medium text-slate-900 dark:text-white">
+        <a
+          href="#"
+          className="font-medium text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        >
           Sarah Wilson
         </a>
       </>
     ),
     time: "3h",
-    iconBg: "bg-indigo-500",
+    iconBg: "bg-indigo-100",
     icon: (
       <svg
-        className="h-5 w-5 text-white"
+        className="h-4 w-4 text-indigo-600"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -68,17 +71,20 @@ const ACTIVITIES: ActivityItem[] = [
     content: (
       <>
         New order{" "}
-        <a href="#" className="font-medium text-slate-900 dark:text-white">
+        <a
+          href="#"
+          className="font-medium text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        >
           #4210
         </a>{" "}
         placed
       </>
     ),
     time: "5h",
-    iconBg: "bg-blue-500",
+    iconBg: "bg-blue-100",
     icon: (
       <svg
-        className="h-5 w-5 text-white"
+        className="h-4 w-4 text-blue-600"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -95,7 +101,7 @@ const ACTIVITIES: ActivityItem[] = [
 
 export function RecentActivity() {
   return (
-    <Card className="shadow-md">
+    <Card>
       <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white mb-6">
         Recent Activity
       </h3>
@@ -108,15 +114,13 @@ export function RecentActivity() {
                   <span
                     className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-200 dark:bg-slate-700"
                     aria-hidden="true"
-                  ></span>
+                  />
                 ) : null}
                 <div className="relative flex space-x-3">
-                  <div>
-                    <span
-                      className={`h-8 w-8 rounded-full ${activity.iconBg} flex items-center justify-center ring-8 ring-white dark:ring-slate-800`}
-                    >
-                      {activity.icon}
-                    </span>
+                  <div
+                    className={`${activity.iconBg} h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white dark:ring-slate-800`}
+                  >
+                    {activity.icon}
                   </div>
                   <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                     <div>
@@ -124,8 +128,8 @@ export function RecentActivity() {
                         {activity.content}
                       </p>
                     </div>
-                    <div className="whitespace-nowrap text-right text-sm text-slate-500 dark:text-slate-400">
-                      {activity.time}
+                    <div className="whitespace-nowrap text-right text-xs text-slate-500 dark:text-slate-400">
+                      {activity.time} ago
                     </div>
                   </div>
                 </div>

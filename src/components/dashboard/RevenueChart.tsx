@@ -2,12 +2,17 @@ import { Card } from "../ui/Card";
 
 export function RevenueChart() {
   return (
-    <Card className="shadow-md">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
-          Revenue Overview
-        </h3>
-        <button className="text-sm text-indigo-600 hover:text-indigo-500 font-medium">
+    <Card>
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h3 className="text-base font-semibold leading-6 text-slate-900 dark:text-white">
+            Revenue Overview
+          </h3>
+          <p className="max-w-2xl text-sm text-slate-500">
+            Monthly revenue performance
+          </p>
+        </div>
+        <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
           View Report
         </button>
       </div>

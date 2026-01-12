@@ -19,7 +19,7 @@ export function StatsCard({
   colorClass: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-white dark:bg-slate-800 p-6 shadow-md ring-1 ring-slate-900/5 transition-all hover:shadow-lg hover:-translate-y-1">
+    <div className="relative overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10 p-6 transition-all hover:shadow-md hover:-translate-y-1">
       <div
         className={`absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 rounded-full blur-2xl ${colorClass}`}
       ></div>
