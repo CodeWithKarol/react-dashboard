@@ -1,12 +1,12 @@
-import { RevenueChart } from "./dashboard/RevenueChart";
-import { UserAcquisitionChart } from "./dashboard/UserAcquisitionChart";
-import { RecentActivity } from "./dashboard/RecentActivity";
-import { RecentTransactions } from "./dashboard/RecentTransactions";
-import { TeamMembers } from "./dashboard/TeamMembers";
-import { ProjectList } from "./dashboard/ProjectList";
-import { WelcomeBanner } from "./dashboard/WelcomeBanner";
-import { QuickActions } from "./dashboard/QuickActions";
-import { Card } from "./ui/Card";
+import { RevenueChart } from "../components/dashboard/RevenueChart";
+import { UserAcquisitionChart } from "../components/dashboard/UserAcquisitionChart";
+import { RecentActivity } from "../components/dashboard/RecentActivity";
+import { RecentTransactions } from "../components/dashboard/RecentTransactions";
+import { TeamMembers } from "../components/dashboard/TeamMembers";
+import { ProjectList } from "../components/dashboard/ProjectList";
+import { WelcomeBanner } from "../components/dashboard/WelcomeBanner";
+import { QuickActions } from "../components/dashboard/QuickActions";
+import { Card } from "../components/ui/Card";
 import { DASHBOARD_STATS } from "../data/mockData";
 
 export function Dashboard() {

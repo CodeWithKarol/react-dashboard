@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Sidebar } from "./sidebar";
-import { Header } from "./header";
+import { Sidebar } from "./Sidebar";
+import { Header } from "./Header";
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

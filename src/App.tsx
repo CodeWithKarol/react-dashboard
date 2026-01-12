@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Layout } from "./components/layout/Layout";
-import { Dashboard } from "./components/Dashboard";
+import { Dashboard } from "./pages/Dashboard";
 import { Analytics } from "./pages/Analytics";
 
 function App() {
