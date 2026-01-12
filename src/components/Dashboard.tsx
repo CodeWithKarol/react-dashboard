@@ -172,8 +172,94 @@ export function Dashboard() {
               View Report
             </button>
           </div>
-          <div className="h-64 sm:h-80 flex items-center justify-center bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700 border-dashed">
-            <span className="text-slate-400">Chart Placeholder</span>
+          <div className="h-64 sm:h-80 w-full p-4">
+            <div className="relative h-full w-full">
+              {/* Grid Lines */}
+              <div className="absolute inset-0 flex flex-col justify-between text-xs text-slate-400">
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-100 dark:border-slate-800 w-full h-0"></div>
+              </div>
+
+              {/* Charts */}
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute inset-0 h-full w-full overflow-visible"
+                preserveAspectRatio="none"
+              >
+                {/* Series A (Blue/Indigo) */}
+                <polyline
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-indigo-500 shadow-sm"
+                  points="0,20 16.6,40 33.3,53.3 50,46.6 66.6,66.6 83.3,73.3 100,60"
+                  vectorEffect="non-scaling-stroke"
+                />
+                {/* Point markers Series A */}
+                {[
+                  [0, 20],
+                  [16.6, 40],
+                  [33.3, 53.3],
+                  [50, 46.6],
+                  [66.6, 66.6],
+                  [83.3, 73.3],
+                  [100, 60],
+                ].map(([x, y], i) => (
+                  <circle
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    r="1.5"
+                    className="fill-indigo-500 bg-white"
+                    strokeWidth="0"
+                  />
+                ))}
+
+                {/* Series B (Pink/Red) */}
+                <polyline
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-pink-500"
+                  points="0,86.6 16.6,93.3 33.3,76.6 50,53.3 66.6,80 83.3,73.3 100,80"
+                  vectorEffect="non-scaling-stroke"
+                  strokeDasharray="4 4"
+                />
+                {/* Point markers Series B */}
+                {[
+                  [0, 86.6],
+                  [16.6, 93.3],
+                  [33.3, 76.6],
+                  [50, 53.3],
+                  [66.6, 80],
+                  [83.3, 73.3],
+                  [100, 80],
+                ].map(([x, y], i) => (
+                  <circle
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    r="1.5"
+                    className="fill-pink-500"
+                    strokeWidth="0"
+                  />
+                ))}
+              </svg>
+
+              {/* X-Axis Labels */}
+              <div className="absolute top-full left-0 right-0 mt-2 flex justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -188,8 +274,144 @@ export function Dashboard() {
               <option>Last 30 Days</option>
             </select>
           </div>
-          <div className="h-64 sm:h-80 flex items-center justify-center bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700 border-dashed">
-            <span className="text-slate-400">Chart Placeholder</span>
+          <div className="h-64 sm:h-80 w-full p-4">
+            <div className="relative h-full w-full">
+              {/* Grid Lines */}
+              <div className="absolute inset-0 flex flex-col justify-between text-xs text-slate-400">
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-200 dark:border-slate-700 w-full h-0"></div>
+                <div className="border-b border-slate-100 dark:border-slate-800 w-full h-0"></div>
+              </div>
+
+              {/* Bar Chart SVG */}
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute inset-0 h-full w-full overflow-visible"
+                preserveAspectRatio="none"
+              >
+                {/* Q1 */}
+                <g>
+                  <rect
+                    x="5"
+                    y="68"
+                    width="15"
+                    height="32"
+                    className="fill-indigo-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="5"
+                    y="60"
+                    width="15"
+                    height="8"
+                    className="fill-purple-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="5"
+                    y="56"
+                    width="15"
+                    height="4"
+                    className="fill-pink-500"
+                    rx="2"
+                  />
+                </g>
+
+                {/* Q2 */}
+                <g>
+                  <rect
+                    x="30"
+                    y="52"
+                    width="15"
+                    height="48"
+                    className="fill-indigo-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="30"
+                    y="36"
+                    width="15"
+                    height="16"
+                    className="fill-purple-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="30"
+                    y="28"
+                    width="15"
+                    height="8"
+                    className="fill-pink-500"
+                    rx="2"
+                  />
+                </g>
+
+                {/* Q3 */}
+                <g>
+                  <rect
+                    x="55"
+                    y="44"
+                    width="15"
+                    height="56"
+                    className="fill-indigo-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="55"
+                    y="24"
+                    width="15"
+                    height="20"
+                    className="fill-purple-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="55"
+                    y="8"
+                    width="15"
+                    height="16"
+                    className="fill-pink-500"
+                    rx="2"
+                  />
+                </g>
+
+                {/* Q4 */}
+                <g>
+                  <rect
+                    x="80"
+                    y="48"
+                    width="15"
+                    height="52"
+                    className="fill-indigo-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="80"
+                    y="36"
+                    width="15"
+                    height="12"
+                    className="fill-purple-500"
+                    rx="2"
+                  />
+                  <rect
+                    x="80"
+                    y="12"
+                    width="15"
+                    height="24"
+                    className="fill-pink-500"
+                    rx="2"
+                  />
+                </g>
+              </svg>
+
+              {/* X-Axis Labels */}
+              <div className="absolute top-full left-0 right-0 mt-2 flex justify-around text-xs text-slate-500 dark:text-slate-400 px-2">
+                <span>Q1</span>
+                <span>Q2</span>
+                <span>Q3</span>
+                <span>Q4</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -285,7 +507,86 @@ export function Dashboard() {
                     </a>
                   </td>
                 </tr>
-                {/* Additional rows would go here */}
+                <tr className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <td className="whitespace-nowrap py-4 pl-6 pr-3 text-sm">
+                    <div className="flex items-center">
+                      <div className="h-9 w-9 flex-shrink-0">
+                        <img
+                          className="h-9 w-9 rounded-full bg-slate-100 placeholder"
+                          src="https://ui-avatars.com/api/?name=Courtney+Henry&background=random"
+                          alt=""
+                        />
+                      </div>
+                      <div className="ml-4">
+                        <div className="font-medium text-slate-900 dark:text-white">
+                          Courtney Henry
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400">
+                          courtney.henry@example.com
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500 dark:text-slate-300">
+                    $1,950.00
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm">
+                    <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+                      Pending
+                    </span>
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500 dark:text-slate-400">
+                    Jan 11, 2026
+                  </td>
+                  <td className="relative whitespace-nowrap py-4 pl-3 pr-6 text-right text-sm font-medium">
+                    <a
+                      href="#"
+                      className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                    >
+                      Edit
+                    </a>
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                  <td className="whitespace-nowrap py-4 pl-6 pr-3 text-sm">
+                    <div className="flex items-center">
+                      <div className="h-9 w-9 flex-shrink-0">
+                        <img
+                          className="h-9 w-9 rounded-full bg-slate-100 placeholder"
+                          src="https://ui-avatars.com/api/?name=Tom+Cook&background=random"
+                          alt=""
+                        />
+                      </div>
+                      <div className="ml-4">
+                        <div className="font-medium text-slate-900 dark:text-white">
+                          Tom Cook
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400">
+                          tom.cook@example.com
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500 dark:text-slate-300">
+                    $850.00
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm">
+                    <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                      Paid
+                    </span>
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500 dark:text-slate-400">
+                    Jan 10, 2026
+                  </td>
+                  <td className="relative whitespace-nowrap py-4 pl-3 pr-6 text-right text-sm font-medium">
+                    <a
+                      href="#"
+                      className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                    >
+                      Edit
+                    </a>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -332,14 +633,90 @@ export function Dashboard() {
                         </a>
                       </p>
                     </div>
-                    <div className="whitespace-nowrap text-right text-sm text-slate-500">
+                    <div className="whitespace-nowrap text-right text-sm text-slate-500 dark:text-slate-400">
                       1h
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            {/* More list items */}
+            <li>
+              <div className="relative pb-8">
+                <span
+                  className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-200 dark:bg-slate-700"
+                  aria-hidden="true"
+                ></span>
+                <div className="relative flex space-x-3">
+                  <div>
+                    <span className="h-8 w-8 rounded-full bg-indigo-500 flex items-center justify-center ring-8 ring-white dark:ring-slate-800">
+                      <svg
+                        className="h-5 w-5 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                    <div>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        New user registered{" "}
+                        <a
+                          href="#"
+                          className="font-medium text-slate-900 dark:text-white"
+                        >
+                          Sarah Wilson
+                        </a>
+                      </p>
+                    </div>
+                    <div className="whitespace-nowrap text-right text-sm text-slate-500 dark:text-slate-400">
+                      3h
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="relative pb-8">
+                <div className="relative flex space-x-3">
+                  <div>
+                    <span className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white dark:ring-slate-800">
+                      <svg
+                        className="h-5 w-5 text-white"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 2c-1.716 0-3.408.106-5.07.31C3.806 2.45 3 3.414 3 4.517V17.25a.75.75 0 001.075.676L10 15.08l5.925 2.846A.75.75 0 0017 17.25V4.517c0-1.103-.806-2.068-1.93-2.207A41.403 41.403 0 0010 2z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                    <div>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        New order{" "}
+                        <a
+                          href="#"
+                          className="font-medium text-slate-900 dark:text-white"
+                        >
+                          #4210
+                        </a>{" "}
+                        placed
+                      </p>
+                    </div>
+                    <div className="whitespace-nowrap text-right text-sm text-slate-500 dark:text-slate-400">
+                      5h
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
